@@ -13,11 +13,11 @@ public class Authentication {
         System.out.print("Enter your name: ");
         Scanner sc = new Scanner(System.in);
         String customerName = sc.next();
-        boolean isStringOnlyAlphabet = ((!customerName.isEmpty()) && customerName.matches("^[a-zA-Z]*$"));
-        if(isStringOnlyAlphabet){
+        boolean isNameOnlyAlphabet = ((!customerName.isEmpty()) && customerName.matches("^[a-zA-Z]*$"));
+        if(isNameOnlyAlphabet){
             CreateCustomer createCustomer = new CreateCustomer();
             customerDetails = createCustomer.createAndGetCustomer(customerDetails, customerDatabase, customerName);
-            if(!(customerDatabase.getCustomers().containsKey(customerDetails.getCustomerID()))){
+            if((customerDatabase.getCustomers().containsKey(customerDetails.getCustomerID()))){
                 System.out.println();
                 System.out.println("====================================================================");
                 System.out.println("Welcome To Our Bank "+customerDetails.getCustomerName()+"!");
@@ -32,9 +32,9 @@ public class Authentication {
             }
             else {
                 System.out.println("====================================================================");
-                System.out.println("Your already have an account...!");
+                System.out.println("Your don't have an account...!");
                 System.out.println("====================================================================");
-                System.out.println("Please SignIn!");
+                System.out.println("Please SignUp!");
                 System.out.println("====================================================================");
             }
         }

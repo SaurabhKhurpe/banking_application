@@ -48,6 +48,7 @@ public class ShowDetails{
         else {
             bankAccount = new BankAccount(customerDatabase, c_id);
             customerDatabase.setBalance(0, c_id);
+            System.out.println("First time Login");
         }
 //            System.out.println("Bank object created");
 
@@ -144,9 +145,9 @@ public class ShowDetails{
                             this.second_option = 7;
                         }
                     } while (this.second_option != 7);
+*/
                 } else if (this.second_option == 7) {
                     System.out.println("Enter a valid input from keyboard");
-*/
                 } else {
                     this.invalidInput();
                 }
@@ -157,7 +158,7 @@ public class ShowDetails{
     }
 
     int signOut(CustomerDatabase customerDatabase, Integer id){
-        if (!(customerDatabase.getCustomerNumPrevTransactions(id).equals(0))) {
+        if (!(customerDatabase.getBalance(id).equals(0))) {
             System.out.println("====================================================================");
             System.out.println("Signing Out...!");
             System.out.println("====================================================================");

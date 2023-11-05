@@ -20,7 +20,7 @@ public class BankingApplication {
                     showDetails.invalidUser();
                 } else {
                     if (customerDatabase.getBankAccount(uId) == null) {
-                        customerDatabase.setCustomerFlags(uId, false);
+                        customerDatabase.setCustomerFlags(false, uId);
                         customerDatabase.setCustomerBankAccounts(showDetails.customerTransactions(customerDatabase, uId), uId);
                     }
                     else {

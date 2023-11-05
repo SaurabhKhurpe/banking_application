@@ -7,7 +7,7 @@ public class BankAccount {
     ArrayList<Integer> prevTransactions = new ArrayList<>();
 
     BankAccount(CustomerDatabase customerDatabase, Integer id){
-        customerDatabase.setFlag(customerDatabase.getCustomers().containsKey(id));
+        customerDatabase.setCustomerFlags((customerDatabase.getCustomers().containsKey(id)), id);
     }
 
 /*
@@ -79,9 +79,9 @@ public class BankAccount {
             for (int j=0; j<amounts.size(); j++){
                 for(int k=0; k<times.size(); k++){
                     if(i==j && j==k){
-                        System.out.print("=  ="+sr_nos.get(i)+"   	  ");
-                        System.out.print("=      "+amounts.get(j)+"      	 ");
-                        System.out.println("=	"+times.get(k)+"		=");
+                        System.out.print("=         "+sr_nos.get(i)+"           ");
+                        System.out.print("=         "+amounts.get(j)+"          ");
+                        System.out.println("=       "+times.get(k)+"        =");
                     }
                 }
             }

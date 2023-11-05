@@ -14,8 +14,6 @@ public class CustomerDatabase {
 
     public HashMap<Integer, Integer> customerNumPrevTransactions = new HashMap<>();
 
-    Boolean flag;
-
     HashMap<Integer, Boolean> customerFlags = new HashMap<>();
 
     HashMap<Integer, BankAccount> customerBankAccounts = new HashMap<>();
@@ -24,10 +22,12 @@ public class CustomerDatabase {
         String cName = customerDetails.customerName;
         Integer cID = customerDetails.customerID;
         customers.put(cID, cName);
+/*
         System.out.println();
         System.out.println("====================================================================");
         System.out.println(customers);
         System.out.println("====================================================================");
+*/
     }
 
     public HashMap<Integer, String> getCustomers(){
@@ -66,15 +66,11 @@ public class CustomerDatabase {
         return customerNumPrevTransactions.get(id);
     }
 
-    public void setFlag(boolean flag) {
-        this.flag = flag;
-    }
-
     public boolean getFlag(Integer id){
         return this.getCustomerFlags(id);
     }
 
-    public void setCustomerFlags(Integer id, Boolean flag) {
+    public void setCustomerFlags(Boolean flag, Integer id) {
         this.customerFlags.put(id, flag);
     }
 
