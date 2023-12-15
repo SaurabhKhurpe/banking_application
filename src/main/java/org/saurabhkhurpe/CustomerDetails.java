@@ -1,8 +1,8 @@
 package org.saurabhkhurpe;
 
 public class CustomerDetails {
-    Integer customerID;
-    String customerName;
+    private Integer customerID;
+    private String customerName;
 
     public void setCustomerID(Integer customerID) {
         this.customerID = customerID;

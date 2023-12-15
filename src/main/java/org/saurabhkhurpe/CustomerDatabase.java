@@ -4,30 +4,24 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CustomerDatabase {
-    public HashMap<Integer, String> customers = new HashMap<>();
+    private HashMap<Integer, String> customers = new HashMap<>();
 
-    public HashMap<Integer, Integer> balances = new HashMap<>();
+    private HashMap<Integer, Integer> balances = new HashMap<>();
 
-    public HashMap<Integer, Integer> customersPrevTransactionAmount = new HashMap<>();
+    private HashMap<Integer, Integer> customersPrevTransactionAmount = new HashMap<>();
 
-    public HashMap<Integer, ArrayList<Integer>> customersPrevTransactions = new HashMap<>();
+    private HashMap<Integer, ArrayList<Integer>> customersPrevTransactions = new HashMap<>();
 
-    public HashMap<Integer, Integer> customerNumPrevTransactions = new HashMap<>();
+    private HashMap<Integer, Integer> customerNumPrevTransactions = new HashMap<>();
 
-    HashMap<Integer, Boolean> customerFlags = new HashMap<>();
+    private HashMap<Integer, Boolean> customerFlags = new HashMap<>();
 
-    HashMap<Integer, BankAccount> customerBankAccounts = new HashMap<>();
+    private HashMap<Integer, BankAccount> customerBankAccounts = new HashMap<>();
 
     public void setCustomers(CustomerDetails customerDetails){
-        String cName = customerDetails.customerName;
-        Integer cID = customerDetails.customerID;
+        Integer cID = customerDetails.getCustomerID();
+        String cName = customerDetails.getCustomerName();
         customers.put(cID, cName);
-/*
-        System.out.println();
-        System.out.println("====================================================================");
-        System.out.println(customers);
-        System.out.println("====================================================================");
-*/
     }
 
     public HashMap<Integer, String> getCustomers(){

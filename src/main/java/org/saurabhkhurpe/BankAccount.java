@@ -4,17 +4,11 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class BankAccount {
-    ArrayList<Integer> prevTransactions = new ArrayList<>();
+    private ArrayList<Integer> prevTransactions = new ArrayList<>();
 
     BankAccount(CustomerDatabase customerDatabase, Integer id){
         customerDatabase.setCustomerFlags((customerDatabase.getCustomers().containsKey(id)), id);
     }
-
-/*
-    public ArrayList<Integer> getPrevTransactions(CustomerDatabase customerDatabase, Integer c_id) {
-        return customerDatabase.getCustomersPrevTransactions(c_id);
-    }
-*/
 
     void deposit(CustomerDatabase customerDatabase, Integer amount, Integer c_id){
         if(amount != 0){

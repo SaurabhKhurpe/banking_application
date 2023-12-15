@@ -5,7 +5,6 @@ public class BankingApplication {
         ShowDetails showDetails = new ShowDetails();
         Authentication authentication = new Authentication();
         CustomerDatabase customerDatabase = new CustomerDatabase();
-//        CustomerObjectsDatabase customerObjectsDatabase = new CustomerObjectsDatabase();
 
         int first_option;
         do {
@@ -32,6 +31,9 @@ public class BankingApplication {
             } else if (first_option == 4) {
                 authentication.forgotCustomerName(customerDatabase);
             } else if (first_option == 5) {
+                System.out.println("====================================================================");
+                System.out.println("Closing...!");
+                System.out.println("====================================================================");
                 System.exit(0);
             }
             else {
@@ -40,5 +42,3 @@ public class BankingApplication {
         } while (first_option != 0);
     }
 }
-
-

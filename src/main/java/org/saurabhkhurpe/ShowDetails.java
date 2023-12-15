@@ -3,9 +3,9 @@ package org.saurabhkhurpe;
 import java.util.Scanner;
 
 public class ShowDetails{
-    int MAX = 3;
+    private final int MAX = 3;
 
-    int second_option;
+    private int second_option;
 
     int firstInteraction(){
         System.out.println("====================================================================");
@@ -36,7 +36,7 @@ public class ShowDetails{
         System.out.println("3)Want To Withdraw");
         System.out.println("4)Show Transactions History");
         System.out.println("5)Sign Out");
-        System.out.println("6)End Banking Transactions");
+        System.out.println("6)Close The Application");
         System.out.println();
         System.out.println("====================================================================");
     }
@@ -75,7 +75,7 @@ public class ShowDetails{
                         if (MAX > cnt) {
                             System.out.println("===================================================================================");
                             System.out.println("Please deposit some amount in your account to begin the transaction...!");
-                            System.out.println("You're transaction will end after " + (MAX - cnt) + " more wrong option selection...!");
+                            System.out.println("You're transaction will end after " + (MAX - cnt) + " more same option selection...!");
                             System.out.println("===================================================================================");
                         } else {
                             System.out.println("=======================================================================================");
@@ -123,29 +123,6 @@ public class ShowDetails{
                     this.second_option = this.signOut(customerDatabase, c_id);
                 } else if (this.second_option == 6) {
                     this.closeApplication();
-/*
-                    char exit_option;
-                    do {
-                        System.out.println("====================================================================");
-                        System.out.println("Please confirm you want to exit our Banking Application");
-                        System.out.println();
-                        System.out.println("1)Yes");
-                        System.out.println("2)No");
-                        System.out.println("====================================================================");
-                        Scanner sc = new Scanner(System.in);
-                        exit_option = sc.next().charAt(0);
-                        if (exit_option == 'y' || exit_option == 'Y') {
-                            this.closeApplication();
-                        } else if (exit_option == 'n' || exit_option == 'N') {
-                            System.out.println("====================================================================");
-                            System.out.println("Need recursive call to same function");
-                            System.out.println("====================================================================");
-                        } else {
-                            this.invalidInput();
-                            this.second_option = 7;
-                        }
-                    } while (this.second_option != 7);
-*/
                 } else if (this.second_option == 7) {
                     System.out.println("Enter a valid input from keyboard");
                 } else {
@@ -171,7 +148,7 @@ public class ShowDetails{
 
     void closeApplication(){
         System.out.println("====================================================================");
-        System.out.println("Exiting...!");
+        System.out.println("Closing...!");
         System.out.println("====================================================================");
         System.exit(0);
     }
