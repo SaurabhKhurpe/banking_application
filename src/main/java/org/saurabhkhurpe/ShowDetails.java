@@ -36,7 +36,6 @@ public class ShowDetails{
         System.out.println("3)Want To Withdraw");
         System.out.println("4)Show Transactions History");
         System.out.println("5)Sign Out");
-        System.out.println("6)Close The Application");
         System.out.println();
         System.out.println("====================================================================");
     }
@@ -121,10 +120,6 @@ public class ShowDetails{
                     customerDatabase.setCustomersPrevTransactions(customerDatabase.getCustomersPrevTransactions(c_id), c_id);
                     customerDatabase.setBankAccount(bankAccount, c_id);
                     this.second_option = this.signOut(customerDatabase, c_id);
-                } else if (this.second_option == 6) {
-                    this.closeApplication();
-                } else if (this.second_option == 7) {
-                    System.out.println("Enter a valid input from keyboard");
                 } else {
                     this.invalidInput();
                 }
